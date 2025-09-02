@@ -1,33 +1,8 @@
-# Ignore Git files
-.git
-.gitignore
-
-# Ignore Python caches
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
-*.pdb
-*.egg-info
+.env
+.git
+.gitignore
 
-# Ignore virtual environments
-env/
-venv/
-.venv/
-
-# Ignore logs
-*.log
-
-# Ignore system files
-.DS_Store
-Thumbs.db
-
-# Ignore local development files
-*.swp
-*.swo
-.idea/
-.vscode/
-
-# Ignore Docker itself
-Dockerfile
-.dockerignore
