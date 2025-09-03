@@ -57,12 +57,18 @@ def _iterfile(path: str, chunk_size: int = 1024 * 1024):
 def health():
     return {"ok": True}
 
+@app.get("/ping")
+def ping():
+    return {"status": "ok", "message": "API is alive"}
+
 @app.post("/generate")
 def generate(req: GenerateRequest, bg: BackgroundTasks):
     _ensure_tool("ffmpeg")
     _ensure_tool("ffprobe")
     _ensure_tool("yt-dlp")
     _validate_youtube_url(req.youtube_url)
+
+    return {"status": "ok", "message": "Validation passed"}
 
     tmpdir = tempfile.mkdtemp(prefix="ytshorts_")
     bg.add_task(shutil.rmtree, tmpdir, ignore_errors=True)
