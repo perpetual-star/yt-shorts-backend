@@ -10,14 +10,17 @@ from pydantic import BaseModel, Field
 # ---------- FastAPI ----------
 app = FastAPI(title="YouTube Shorts Generator")
 
+origins = [
+    "https://youtube-short-wiz.lovable.app",   # Your Lovable frontend
+    "https://yt-shorts-backend-production.up.railway.app",  # Your Railway backend
+    "*"  # TEMP: allow everything (useful for debugging)
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "https://youtube-short-wiz.lovable.app",   # Allow all Lovable apps
-        "https://yt-shorts-backend-production.up.railway.app"  # Your backend domain
-    ],
+    allow_origins=origins,
     allow_credentials=True,
-    allow_methods=["*"],  # or ["POST", "GET", "OPTIONS"]
+    allow_methods=["*"],   # Includes POST, GET, OPTIONS (needed for preflight)
     allow_headers=["*"],
 )
 
