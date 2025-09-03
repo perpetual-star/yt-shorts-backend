@@ -13,7 +13,7 @@ app = FastAPI(title="YouTube Shorts Generator")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://*.lovable.app",   # Allow all Lovable apps
+        "https://lovable.dev",   # Allow all Lovable apps
         "https://yt-shorts-backend-production.up.railway.app"  # Your backend domain
     ],
     allow_credentials=True,
