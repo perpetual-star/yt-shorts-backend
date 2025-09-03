@@ -17,7 +17,7 @@ app.add_middleware(
         "https://yt-shorts-backend-production.up.railway.app"  # Your backend domain
     ],
     allow_credentials=True,
-    allow_methods=["POST"],  # or ["POST", "GET", "OPTIONS"]
+    allow_methods=["*"],  # or ["POST", "GET", "OPTIONS"]
     allow_headers=["*"],
 )
 
