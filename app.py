@@ -23,6 +23,17 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.options("/generate")
+async def options_generate():
+    return JSONResponse(
+        content={},
+        headers={
+            "Access-Control-Allow-Origin": "https://preview--youtube-short-wiz.lovable.app",
+            "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+            "Access-Control-Allow-Headers": "Content-Type",
+        },
+    )
+
 # ---------- Models ----------
 class GenerateRequest(BaseModel):
     youtube_url: str = Field(..., examples=["https://www.youtube.com/watch?v=xxxx"])
