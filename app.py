@@ -14,7 +14,6 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "https://youtube-short-wiz.lovable.app",   # Allow all Lovable apps
-        "https://yt-shorts-backend-production.up.railway.app"  # Your backend domain
     ],
     allow_credentials=True,
     allow_methods=["*"],  # or ["POST", "GET", "OPTIONS"]
