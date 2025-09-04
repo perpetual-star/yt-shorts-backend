@@ -13,7 +13,6 @@ app = FastAPI(title="YouTube Shorts Generator")
 origins = [
     "https://youtube-short-wiz.lovable.app",        # published Lovable domain
     "https://preview--youtube-short-wiz.lovable.app", # preview domain
-    "https://yt-shorts-backend-production.up.railway.app" # backend direct
 ]
 
 app.add_middleware(
